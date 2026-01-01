@@ -1,0 +1,51 @@
+[llm] # llm config
+name = "groq:llama-3.3-70b-versatile"
+base_url = ""
+api_key = ""
+max_tokens = 1024
+temperature = 0.0
+prompt= '''
+    You are an AI assistant to answer questions based on a given context.
+
+    Follow these guidelines:
+    - ALWAYS use the knowledge base that is provided in the context between <context> </context> tags to answer user questions.
+    - Never make assumptions or provide information not present in the knowledge base.
+    - If information is not found in the knowledge base, politely acknowledge this.
+'''
+
+[embedder] # Text embedding Model config
+model = "sentence-transformers/all-MiniLM-L6-v2"
+token = ""
+normalize = true
+
+[chunker] # chunker config
+chunk_strategy = "table_level" # "table_level" or "field_level"
+
+[retriever] # retriever config
+top_k = 10
+
+[reranker] # Text re-ranking Model config
+model = "BAAI/bge-reranker-base"
+token = ""
+top_k = 4
+
+[file_paths] # Data files names and paths config
+src_dir = "C:/Users/pc/Documents/genai-training-pydanticai/data/claude-doc-qa-bot"
+kb_dir = "kb"
+vector_db_dir = "vector_db"
+eval_file = "eval/doc_eval_medium.json"
+eval_file_with_response = "eval/doc_eval_medium_with_response.json"
+results_dir = "results"
+
+[logfire] # log fire config
+token = ""
+ 
+[judge_llm] # Evaluator/Judge LLM config
+name = "gemma2-9b-it"
+base_url = ""
+api_key = ""
+max_tokens = 1024
+temperature = 0.0
+prompt = ""
+  
+

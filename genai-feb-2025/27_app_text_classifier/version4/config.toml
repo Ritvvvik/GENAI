@@ -1,0 +1,15 @@
+[file_paths] # Data files names and paths config
+src_dir = "C:/Users/pc/Documents/genai-training-pydanticai/data/text_classifier"
+train_file = "kb/ticket_train.json"
+eval_file = "eval/ticket_eval.json"
+eval_file_with_response = "eval/ticket_eval_with_response_ml.json"
+embeddings_dir = "embeddings"
+model_dir = "model"
+results_dir = "results"
+results_report_file="report_ml.csv"
+results_matrix_file="cm_ml.png"
+
+[embedder] # Text embedding Model config
+model = "sentence-transformers/all-MiniLM-L6-v2"
+token = ""
+normalize = true

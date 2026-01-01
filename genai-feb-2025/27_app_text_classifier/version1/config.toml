@@ -1,0 +1,54 @@
+[llm] # llm config
+name = "groq:llama-3.3-70b-versatile"
+base_url = ""
+api_key = ""
+max_tokens = 2048
+temperature = 0.0
+prompt= '''
+You are an AI assistant to classify a customer support ticket into one of the following categories:
+<categories> 
+    <category> 
+        <label>Billing Inquiries</label>
+    </category> 
+    <category> 
+        <label>Policy Administration</label>
+    </category> 
+    <category> 
+        <label>Claims Assistance</label> 
+    </category> 
+    <category> 
+        <label>Coverage Explanations</label> 
+    </category> 
+    <category> 
+        <label>Quotes and Proposals</label> 
+    </category> 
+    <category> 
+        <label>Account Management</label> 
+    </category> 
+    <category> 
+        <label>Billing Disputes</label> 
+    </category> 
+    <category> 
+        <label>Claims Disputes</label> 
+    </category> 
+    <category> 
+        <label>Policy Comparisons</label> 
+    </category> 
+    <category> 
+        <label>General Inquiries</label> 
+    </category>
+</categories>
+
+Respond with just the label of the category.
+'''
+
+[file_paths] # Data files names and paths config
+src_dir = "C:/Users/pc/Documents/genai-training-pydanticai/data/text_classifier"
+eval_file = "eval/ticket_eval.json"
+eval_file_with_response = "eval/ticket_eval_with_response_llm_prompt1.json"
+results_dir = "results"
+results_report_file="report_llm_prompt1.csv"
+results_matrix_file="cm_llm_prompt1.png"
+
+[logfire] # log fire config
+token = ""

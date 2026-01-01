@@ -1,0 +1,34 @@
+max_iter = 3
+
+[llm_generator]
+# name = "groq:deepseek-r1-distill-llama-70b"
+# name = "groq:gemma2-9b-it"
+name = "github:openai/gpt-4o-mini"
+base_url = "https://models.github.ai/inference"
+api_key = ''
+max_tokens = 1024
+temperature = 0.0
+
+[embedder] 
+model = "sentence-transformers/all-MiniLM-L6-v2"
+token = ""
+normalize = true
+
+[retriever]
+top_k = 10
+
+[reranker] 
+model = "BAAI/bge-reranker-base"
+token = ""
+top_k = 5
+
+[file_paths]
+src_dir = "C:/Users/pc/Documents/genai-training-pydanticai/data/code_contests"
+kb_dir = "kb"
+vector_db_dir = "vector_db"
+eval_file = "eval/eval.jsonl"
+results_file = "results/results_reflection.jsonl"
+
+[logfire] 
+token = ''
+

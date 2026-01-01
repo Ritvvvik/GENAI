@@ -1,0 +1,52 @@
+[llm] # llm config
+name = "groq:llama-3.3-70b-versatile"
+base_url = ""
+api_key = "xxx"
+max_tokens = 1024
+temperature = 0.0
+prompt= '''
+    You are an AI assistant that converts natural language queries into SQL.
+
+    Follow these guidelines:
+    - ALWAYS use the knowledge base that is provided in the context between <schema> </schema> tags to answer user questions.
+    - Generate SQL query based ONLY on the information retrieved from the knowledge base. 
+    - Provide only the SQL query in your response.
+'''
+
+[embedder] # Text embedding Model config
+model = "sentence-transformers/all-MiniLM-L6-v2"
+token = "xxx"
+normalize = true
+
+[chunker] # chunker config
+chunk_strategy = "table_level" # "table_level" or "field_level"
+
+[retriever] # retriever config
+top_k = 10
+
+[re_ranker] # Text re-ranking Model config
+model = "BAAI/bge-reranker-base"
+token = "xxx"
+top_k = 4
+
+[file_paths] # Data files names and paths config
+src_dir = "C:/Users/pc/Documents/genai-training-pydanticai/data/text-to-sql-qa-bot"
+db_file = "db/chinook.sqlite"
+kb_dir = "kb"
+vector_db_dir = "vector_db"
+eval_file = "eval/chinook_eval.json"
+eval_file_with_response = "eval/chinook_eval_with_response.json"
+results_dir = "results"
+
+[logfire] # log fire config
+token = "xxx"
+ 
+[judge_llm] # Evaluator/Judge LLM config
+name = "gemma2-9b-it"
+base_url = ""
+api_key = "xxx"
+max_tokens = 1024
+temperature = 0.0
+prompt = ""
+  
+

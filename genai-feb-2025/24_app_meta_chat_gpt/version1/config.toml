@@ -1,0 +1,15 @@
+[llm] # llm config
+name = "groq:llama-3.3-70b-versatile"
+base_url = ""
+api_key = ""
+max_tokens = 1024
+temperature = 0.0
+prompt= '''
+    You are an AI assistant to answer questions.
+'''
+
+[logfire] # log fire config
+token = ""
+
+  
+

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "question": "How can you create multiple test cases for an evaluation in the Anthropic Evaluation tool?",
+    "answer": "To create multiple test cases in the Anthropic Evaluation tool, click the 'Add Test Case' button, fill in values for each variable in your prompt, and repeat the process to create additional test case scenarios."
+  },
+  {
+    "id": "2",
+    "question": "What embeddings provider does Anthropic recommend for customized domain-specific models, and what capabilities does this provider offer?",
+    "answer": "Anthropic recommends Voyage AI for embedding models. Voyage AI offers customized models for specific industry domains like finance and healthcare, as well as bespoke fine-tuned models for individual customers. They have a wide variety of options and capabilities."
+  },
+  {
+    "id": "3",
+    "question": "What are some key success metrics to consider when evaluating Claude's performance on a classification task, and how do they relate to choosing the right model to reduce latency?",
+    "answer": "When evaluating Claude's performance on a classification task, some key success metrics to consider include accuracy, F1 score, consistency, structure, speed, bias and fairness. Choosing the right model that fits your specific requirements in terms of speed and output quality is a straightforward way to reduce latency and meet the acceptable response time for your use case."
+  },
+  {
+    "id": "4",
+    "question": "What are two ways that Claude for Sheets can improve prompt engineering workflows compared to using chained prompts?",
+    "answer": "Claude for Sheets enables testing prompts across evaluation suites in parallel, which is faster than running chained prompts sequentially. It also excels at office tasks like survey analysis and online data processing that may be more cumbersome with chained prompts."
+  },
+  {
+    "id": "5",
+    "question": "What happens if a prompt for the Text Completions API is missing the \"\\n\\nHuman:\" and \"\\n\\nAssistant:\" turns?",
+    "answer": "If a prompt for the Text Completions API is missing the required \"\\n\\nHuman:\" and \"\\n\\nAssistant:\" turns, it will result in an API error."
+  },
+  {
+    "id": "6",
+    "question": "How do the additional tokens required for tool use in Claude API requests impact pricing compared to regular API requests?",
+    "answer": "Tool use requests in the Claude API are priced the same as regular API requests, based on the total input and output tokens. However, tool use requests have additional tokens beyond the regular input and output, including the tools parameter, tool use content blocks, tool result content blocks, and a special system prompt that enables tool use, which add to the total tokens and cost."
+  },
+  {
+    "id": "7",
+    "question": "When will the new Anthropic Developer Console features that show API usage, billing details, and rate limits be available?",
+    "answer": "The new Usage, Cost, and Rate Limits tabs in the Anthropic Developer Console that show API usage, billing details, and current rate limits will be available on June 27th, 2024."
+  },
+  {
+    "id": "8",
+    "question": "When deciding whether to use chain-of-thought (CoT) for a task, what are two key factors to consider in order to strike the right balance between performance and latency?",
+    "answer": "When deciding whether to use CoT, consider if the task requires in-depth thinking that a human would need to work through, and be aware that the increased output length from CoT may impact latency."
+  },
+  {
+    "id": "9",
+    "question": "How can I use Claude to more easily digest the content of long PDF documents?",
+    "answer": "You can upload PDFs and have Claude summarize their content, making it easier to understand the key points of long documents without having to read through everything."
+  },
+  {
+    "id": "10",
+    "question": "According to the documentation, where can you view your organization's current API rate limits in the Anthropic Console?",
+    "answer": "You can view your organization's current API rate limits in the Rate Limits tab of the Developer Console."
+  }
+]

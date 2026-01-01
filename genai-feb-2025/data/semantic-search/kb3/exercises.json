@@ -1,0 +1,152 @@
+[
+    {
+        "name": "deadlift",
+        "muscle_groups": ["back", "hamstrings"],
+        "description": "Stand with feet hip-width apart, gripping the barbell with hands shoulder-width apart. Lift the barbell by straightening your legs and back."
+    },
+    {
+        "name": "bench press",
+        "muscle_groups": ["chest", "triceps", "shoulders"],
+        "description": "Lie on a bench, feet flat on the ground. Push the barbell from chest level upwards until arms are fully extended."
+    },
+    {
+        "name": "squat",
+        "muscle_groups": ["quadriceps", "glutes", "lower back"],
+        "description": "Stand with feet shoulder-width apart. Bend knees and hips to lower down as if sitting back into a chair, then return to standing."
+    },
+    {
+        "name": "pull-up",
+        "muscle_groups": ["back", "biceps"],
+        "description": "Hang from a bar with hands slightly wider than shoulder-width. Pull body up until chin is above the bar, then lower back down."
+    },
+    {
+        "name": "shoulder press",
+        "muscle_groups": ["shoulders", "triceps"],
+        "description": "Sit or stand with a dumbbell in each hand at shoulder height. Press the weights upwards until arms are extended overhead."
+    },
+    {
+        "name": "barbell row",
+        "muscle_groups": ["back", "biceps"],
+        "description": "Bend forward at the waist, holding a barbell with hands shoulder-width apart. Pull the bar towards your lower chest."
+    },
+    {
+        "name": "lunges",
+        "muscle_groups": ["quadriceps", "glutes", "hamstrings"],
+        "description": "Step forward with one leg and lower your body until both knees are bent at 90-degree angles. Push back up to the starting position."
+    },
+    {
+        "name": "leg press",
+        "muscle_groups": ["quadriceps", "glutes", "hamstrings"],
+        "description": "Sit in a leg press machine with feet hip-width apart on the platform. Extend legs fully, then return to starting position."
+    },
+    {
+        "name": "bicep curl",
+        "muscle_groups": ["biceps"],
+        "description": "Stand holding a dumbbell in each hand with arms extended. Curl the weights towards your shoulders, then lower them back down."
+    },
+    {
+        "name": "tricep dip",
+        "muscle_groups": ["triceps"],
+        "description": "Using parallel bars or a bench, lower your body by bending your arms, then push back up to the starting position."
+    },
+    {
+        "name": "leg curl",
+        "muscle_groups": ["hamstrings"],
+        "description": "Lie face down on a leg curl machine and curl the weight towards your buttocks, then lower it back down."
+    },
+    {
+        "name": "calf raise",
+        "muscle_groups": ["calves"],
+        "description": "Stand on the edge of a step or platform. Rise onto your toes, then lower back down below the level of the step."
+    },
+    {
+        "name": "lat pulldown",
+        "muscle_groups": ["back", "biceps"],
+        "description": "Sit at a lat pulldown machine, grab the bar wider than shoulder-width, and pull the bar down to your upper chest."
+    },
+    {
+        "name": "pec deck",
+        "muscle_groups": ["chest"],
+        "description": "Sit in a pec deck machine with arms on the pads. Bring your arms together in front of you, then return to the starting position."
+    },
+    {
+        "name": "incline bench press",
+        "muscle_groups": ["upper chest", "shoulders", "triceps"],
+        "description": "Lie on an incline bench. Push the barbell from chest level upwards until arms are fully extended."
+    },
+    {
+        "name": "front squat",
+        "muscle_groups": ["quadriceps", "glutes", "upper back"],
+        "description": "Stand with feet shoulder-width apart, holding a barbell in front of your shoulders. Lower into a squat, then return to standing."
+    },
+    {
+        "name": "Romanian deadlift",
+        "muscle_groups": ["hamstrings", "lower back", "glutes"],
+        "description": "Hold a barbell in front of your thighs. Bend at hips to lower the bar, keeping your back straight, then return to standing."
+    },
+    {
+        "name": "t-bar row",
+        "muscle_groups": ["back", "biceps"],
+        "description": "Straddle a T-bar row machine and lift the bar by pulling it towards your chest while keeping your back straight."
+    },
+    {
+        "name": "overhead tricep extension",
+        "muscle_groups": ["triceps"],
+        "description": "Hold a dumbbell with both hands above your head. Bend your elbows to lower the weight behind your head, then extend your arms back up."
+    },
+    {
+        "name": "seated leg extension",
+        "muscle_groups": ["quadriceps"],
+        "description": "Sit on a leg extension machine with your legs under the pad. Extend your legs out in front of you, then return to the starting position."
+    },
+    {
+        "name": "lying tricep extension",
+        "muscle_groups": ["triceps"],
+        "description": "Lie on a bench holding a barbell. Lower the bar to your forehead, then extend your arms to raise it back up."
+    },
+    {
+        "name": "seated cable row",
+        "muscle_groups": ["back", "biceps"],
+        "description": "Sit at a cable row machine, grab the handle, and pull it towards your waist while keeping your back straight."
+    },
+    {
+        "name": "hammer curl",
+        "muscle_groups": ["biceps"],
+        "description": "Stand holding dumbbells with palms facing your body. Curl the weights up, keeping your palms facing each other."
+    },
+    {
+        "name": "reverse fly",
+        "muscle_groups": ["shoulders", "upper back"],
+        "description": "Bend forward at the waist, holding dumbbells. Raise your arms to the side until they are parallel with the floor."
+    },
+    {
+        "name": "face pull",
+        "muscle_groups": ["shoulders", "upper back"],
+        "description": "Stand facing a cable machine with a rope attachment. Pull the rope towards your face while separating your hands."
+    },
+    {
+        "name": "sumo deadlift",
+        "muscle_groups": ["glutes", "inner thighs", "lower back"],
+        "description": "Stand with feet wider than shoulder-width, holding a barbell. Keep your back straight and lift the barbell by straightening your legs."
+    },
+    {
+        "name": "hack squat",
+        "muscle_groups": ["quadriceps", "glutes", "calves"],
+        "description": "Stand in a hack squat machine with your back against the pad. Lower down into a squat, then push back up to standing."
+    },
+    {
+        "name": "hip thrust",
+        "muscle_groups": ["glutes", "hamstrings"],
+        "description": "Sit on the ground with a bench behind you. Place a barbell over your hips and thrust upward, pushing your hips towards the sky."
+    },
+    {
+        "name": "farmers walk",
+        "muscle_groups": ["forearms", "shoulders", "traps"],
+        "description": "Hold a heavy weight in each hand. Walk a set distance or for a set time while keeping your posture upright."
+    },
+    {
+        "name": "decline bench press",
+        "muscle_groups": ["lower chest", "triceps"],
+        "description": "Lie on a decline bench. Push the barbell from chest level upwards until arms are fully extended."
+    }
+]

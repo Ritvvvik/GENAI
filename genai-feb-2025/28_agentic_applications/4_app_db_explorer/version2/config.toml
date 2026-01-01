@@ -1,0 +1,61 @@
+[llm_generator] # llm config
+# name = "groq:deepseek-r1-distill-llama-70b"
+name = "groq:llama-3.3-70b-versatile"
+base_url = ""
+api_key = ""
+max_tokens = 1024
+temperature = 0.0
+prompt= '''
+You are an AI agent to generate SQL queries from natural language using database schema.
+Use the schema provided between <schema> and </schema> tags.
+'''
+
+[llm_executor] # llm config
+#name = "groq:deepseek-r1-distill-llama-70b"
+name = "groq:llama-3.3-70b-versatile"
+base_url = ""
+api_key = ""
+max_tokens = 1024
+temperature = 0.0
+prompt= '''
+You are an AI agent to execute SQL queries using available tools and respond to query.
+Use the tool *run_sql_tool* to get schema of database or tables.
+'''
+
+[embedder] # Text embedding Model config
+model = "sentence-transformers/all-MiniLM-L6-v2"
+token = ""
+normalize = true
+
+[chunker] # chunker config
+chunk_strategy = "table_level" # "table_level" or "field_level"
+
+[retriever] # retriever config
+top_k = 10
+
+[reranker] # Text re-ranking Model config
+model = "BAAI/bge-reranker-base"
+token = ""
+top_k = 4
+
+[file_paths] # Data files names and paths config
+src_dir = "C:/Users/pc/Documents/genai-training-pydanticai/data/db_explorer"
+db_file = "db/chinook.sqlite"
+kb_dir = "kb"
+vector_db_dir = "vector_db"
+eval_file = "eval/chinook_eval.json"
+eval_file_with_response = "eval/chinook_eval_with_response.json"
+results_dir = "results"
+
+[logfire] # log fire config
+token = ""
+ 
+[judge_llm] # Evaluator/Judge LLM config
+name = "gemma2-9b-it"
+base_url = ""
+api_key = ""
+max_tokens = 1024
+temperature = 0.0
+prompt = ""
+  
+

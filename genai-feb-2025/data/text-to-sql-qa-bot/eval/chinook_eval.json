@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "How many albums are there?",
+    "answer": "SELECT COUNT(*) FROM album"
+  },
+  {
+    "id": 2,
+    "question": "How many distinct genres are there?",
+    "answer": "SELECT COUNT(DISTINCT GenreId) FROM track"
+  },
+  {
+    "id": 3,
+    "question": "How many tracks are in the 'Rock' genre?",
+    "answer": "SELECT COUNT(*) FROM track t JOIN genre g ON t.GenreId = g.GenreId WHERE g.name = 'Rock'"
+  },
+  {
+    "id": 4,
+    "question": "What is the total number of invoice lines?",
+    "answer": "SELECT COUNT(*) FROM InvoiceLine"
+  },
+  {
+    "id": 5,
+    "question": "How many customers are from the USA?",
+    "answer": "SELECT COUNT(*) FROM customer WHERE country = 'USA'"
+  },
+  {
+    "id": 6,
+    "question": "What is the highest employee ID?",
+    "answer": "SELECT MAX(EmployeeId) FROM employee"
+  },
+  {
+    "id": 7,
+    "question": "How many tracks have a length greater than 5 minutes (300000 milliseconds)?",
+    "answer": "SELECT COUNT(*) FROM track WHERE milliseconds > 300000"
+  },
+  {
+    "id": 8,
+    "question": "What is the total number of bytes for all tracks?",
+    "answer": "SELECT SUM(bytes) FROM track"
+  },
+  {
+    "id": 9,
+    "question": "How many customers have a company name specified?",
+    "answer": "SELECT COUNT(*) FROM customer WHERE company IS NOT NULL"
+  },
+  {
+    "id": 10,
+    "question": "How many tracks cost more than $1?",
+    "answer": "SELECT COUNT(*) FROM track WHERE UnitPrice > 1"
+  },
+  {
+    "id": 11,
+    "question": "What is the total number of seconds for all tracks?",
+    "answer": "SELECT ROUND(SUM(milliseconds) / 1000) FROM track"
+  },
+  {
+    "id": 12,
+    "question": "How many invoices were created in 2021?",
+    "answer": "SELECT COUNT(*) FROM invoice WHERE strftime('%Y', InvoiceDate)  = '2021'"
+  },
+  {
+    "id": 13,
+    "question": "What is the number of customers who have made purchases totaling over $40?",
+    "answer": "SELECT COUNT(*) FROM (SELECT CustomerId FROM invoice GROUP BY CustomerId HAVING SUM(total) > 40)"
+  },
+  {
+    "id": 14,
+    "question": "How many artists have more than 10 albums?",
+    "answer": "SELECT COUNT(*) FROM (SELECT ArtistId FROM album GROUP BY ArtistId HAVING COUNT(*) > 10)"
+  },
+  {
+    "id": 15,
+    "question": "What is the total number of tracks in playlists that have 'Rock' in their name?",
+    "answer": "SELECT COUNT(DISTINCT pt.TrackId) FROM PlaylistTrack pt JOIN playlist p ON pt.PlaylistId = p.PlaylistId WHERE p.name LIKE '%Rock%'"
+  },
+  {
+    "id": 16,
+    "question": "How many customers have made purchases in all years the store has been operating?",
+    "answer": "SELECT COUNT(*) FROM (SELECT CustomerId FROM invoice GROUP BY CustomerId HAVING COUNT(DISTINCT strftime('%Y', InvoiceDate)) = (SELECT COUNT(DISTINCT strftime('%Y', InvoiceDate)) FROM invoice))"
+  },
+  {
+    "id": 17,
+    "question": "What is the number of customers who have purchased tracks from all genres?",
+    "answer": "SELECT COUNT(*) FROM (SELECT CustomerId FROM invoice i JOIN InvoiceLine il ON i.InvoiceId = il.InvoiceId JOIN track t ON il.TrackId = t.TrackId GROUP BY i.CustomerId HAVING COUNT(DISTINCT t.GenreId) = (SELECT COUNT(*) FROM genre))"
+  },
+  {
+    "id": 18,
+    "question": "How many albums have all their tracks in a single genre?",
+    "answer": "SELECT COUNT(*) FROM (SELECT AlbumId FROM track GROUP BY AlbumId HAVING COUNT(DISTINCT GenreId) = 1)"
+  },
+  {
+    "id": 19,
+    "question": "What is the number of customers who have spent more in 2011 than in 2010?",
+    "answer": "SELECT COUNT(*) FROM (SELECT CustomerId FROM (SELECT CustomerId, strftime('%Y', InvoiceDate) as year, SUM(total) as yearly_total FROM invoice WHERE strftime('%Y', InvoiceDate) IN ('2010', '2011') GROUP BY CustomerId, year) pivot GROUP BY CustomerId HAVING MAX(CASE WHEN year = '2011' THEN yearly_total ELSE 0 END) > MAX(CASE WHEN year = '2010' THEN yearly_total ELSE 0 END))"
+  },
+  {
+    "id": 20,
+    "question": "How many tracks appear in more playlists than the average track?",
+    "answer": "SELECT COUNT(*) FROM (SELECT TrackId FROM PlaylistTrack GROUP BY TrackId HAVING COUNT(*) > (SELECT AVG(playlist_count) FROM (SELECT COUNT(*) as playlist_count FROM PlaylistTrack GROUP BY TrackId)))"
+  },
+  {
+    "id": 21,
+    "question": "What is the number of artists who have tracks in more genres than the average artist?",
+    "answer": "SELECT COUNT(*) FROM (SELECT ArtistId FROM album a JOIN track t ON a.AlbumId = t.AlbumId GROUP BY ArtistId HAVING COUNT(DISTINCT GenreId) > (SELECT AVG(genre_count) FROM (SELECT COUNT(DISTINCT GenreId) as genre_count FROM album a JOIN track t ON a.AlbumId = t.AlbumId GROUP BY a.ArtistId)))"
+  },
+  {
+    "id": 22,
+    "question": "What is the total number of 'Rock' tracks that are longer than the average 'Jazz' track?",
+    "answer": "SELECT COUNT(*) FROM track t JOIN genre g ON t.GenreId = g.GenreId WHERE g.name = 'Rock' AND t.milliseconds > (SELECT AVG(milliseconds) FROM track t JOIN genre g ON t.GenreId = g.GenreId WHERE g.name = 'Jazz')"
+  },
+  {
+    "id": 23,
+    "question": "What is the number of tracks that have a longer duration than the average duration of tracks in their genre?",
+    "answer": "SELECT COUNT(*) FROM track t WHERE milliseconds > (SELECT AVG(milliseconds) FROM track t2 WHERE t2.GenreId = t.GenreId)"
+  },
+  {
+    "id": 24,
+    "question": "How many employees have sold to customers from all countries represented in the customer base?",
+    "answer": "SELECT COUNT(*) FROM (SELECT e.EmployeeId FROM employee e JOIN customer c ON e.EmployeeId = c.SupportRepId GROUP BY e.EmployeeId HAVING COUNT(DISTINCT c.country) = (SELECT COUNT(DISTINCT country) FROM customer))"
+  }
+]

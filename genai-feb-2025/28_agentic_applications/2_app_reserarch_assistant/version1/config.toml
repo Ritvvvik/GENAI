@@ -1,0 +1,39 @@
+[llm] # llm config
+name = "groq:gemma2-9b-it"
+#"groq:gemma2-9b-it"
+base_url = ""
+api_key = ""
+max_tokens = 1024
+temperature = 0.0
+
+[file_paths] # Data files names and paths config
+src_dir = "C:/Users/pc/Documents/genai-training-pydanticai/data/text_summarizer"
+eval_file = "eval/news_short.json"
+eval_file_with_response = "eval/news_short_with_response.json"
+results_dir = "results"
+results_non_llm_metrics_file="report_non_llm_metrics.txt"
+
+[docs] # Document length config
+short_doc_threshold = 5000
+medium_doc_threshold = 10000
+long_doc_threshold = 20000
+
+[chunker] # chunker config
+chunk_size = 2048
+chunk_overlap = 128
+
+[embedder] # Text embedding Model config
+model = "sentence-transformers/all-MiniLM-L6-v2"
+token = ""
+normalize = true
+
+[logfire] # log fire config
+token = ""
+ 
+[judge_llm] # Evaluator/Judge LLM config
+name = "gemma2-9b-it"
+base_url = ""
+api_key = ""
+max_tokens = 1024
+temperature = 0.0
+prompt = ""

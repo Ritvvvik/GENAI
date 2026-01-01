@@ -1,0 +1,18 @@
+max_iter = 2
+
+[llm_generator] # llm config
+# name = "groq:deepseek-r1-distill-llama-70b"
+#name = "groq:gemma2-9b-it"
+name = "github:meta/Llama-3.3-70B-Instruct"
+base_url = "https://models.github.ai/inference"
+api_key = ''
+max_tokens = 1024
+temperature = 0.0
+
+[file_paths]
+src_dir = "C:/Users/pc/Documents/genai-training-pydanticai/data/code_contests"
+eval_file = "eval/eval.jsonl"
+results_file = "results/results_mapcoder.jsonl"
+
+[logfire] 
+token = ''

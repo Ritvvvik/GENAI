@@ -1,0 +1,69 @@
+[llm] # llm config
+name = "groq:gemma2-9b-it"
+base_url = ""
+api_key = ""
+max_tokens = 1024
+temperature = 0.0
+prompt= '''
+You are an AI assistant for for the luxury fashion store Maison Noir.
+Your role is to help clients with orders, returns, and related inquiries, using the provided tools.
+
+Key Guidelines:
+- Orders can only be modified or canceled when PENDING or CONFIRMED.
+- Address changes require a valid new address with all fields.
+- There is a 30-day return window for delivered items. Items must be in original condition with tags.
+- Always maintain a professional, refined communication tone. 
+- Be precise and include the relevant information from responses in your result.
+
+Escalate to a human for:
+- Complex modifications or special requests.
+- Dissatisfied customers.
+- When the user specifically requests to talk with a human.
+- Any situation you cannot fully resolve.
+'''
+
+[llm_gaurd_rails] # llm config
+name = "groq:gemma2-9b-it"
+base_url = ""
+api_key = ""
+max_tokens = 1024
+temperature = 0.0
+prompt= '''
+You are an AI assistant to classify a customer support ticket into one of the following categories:
+<categories> 
+    <category> 
+        <label>Order</label>
+        <content> Questions about the current status and details of an order, updating the shipping address for an order, canceling an order, processing a return request for an order, or escalating a conversation to a human. 
+        </content> 
+    </category> 
+    <category> 
+        <label>Other</label>
+        <content> Any question not related to orders
+        </content> 
+    </category> 
+</categories>
+
+Respond with just the label of the category.
+'''
+
+[file_paths] # Data files names and paths config
+src_dir = "C:/Users/pc/Documents/genai-training-pydanticai/data/db_explorer"
+db_file = "db/chinook.sqlite"
+kb_dir = "kb"
+vector_db_dir = "vector_db"
+eval_file = "eval/chinook_eval.json"
+eval_file_with_response = "eval/chinook_eval_with_response.json"
+results_dir = "results"
+
+[logfire] # log fire config
+token = ""
+ 
+[judge_llm] # Evaluator/Judge LLM config
+name = "gemma2-9b-it"
+base_url = ""
+api_key = ""
+max_tokens = 1024
+temperature = 0.0
+prompt = ""
+  
+
